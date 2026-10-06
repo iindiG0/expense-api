@@ -1,0 +1,20 @@
+# PostgreSQL database for expense-api, managed by CloudNativePG.
+# Apply once as the cluster admin:
+#   kubectl apply -f cnpg-db.yaml
+# CNPG then creates Secret "expense-db-app" with the connection string (key: uri).
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: expense-db
+  namespace: client-a
+spec:
+  instances: 1
+  storage:
+    size: 1Gi
+  resources:
+    requests: { cpu: 50m, memory: 128Mi }
+    limits:   { memory: 256Mi }
+  bootstrap:
+    initdb:
+      database: app
+      owner: app

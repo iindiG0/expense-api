@@ -1,0 +1,16 @@
+{
+  "name": "expense-api",
+  "version": "1.0.0",
+  "description": "Expense tracker REST API (Node.js + Express + PostgreSQL) for Epinio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "22.x"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.0"
+  }
+}
